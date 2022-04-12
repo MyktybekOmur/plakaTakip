@@ -1,0 +1,60 @@
+
+  <div class="container row m-auto">
+    <div class="col-12">
+        <div class="card">
+            <!-- Card header -->
+            <div class="card-header actions-toolbar">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col">
+                        <h6 class="d-inline-block mb-0">Sisteme Kayıtlı Araçlar</h6>
+                    </div>
+                    <div class="col text-end">
+                        <a href="#modal-add" (click)="openAddUser('0',true)" data-bs-target="#modal-add" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-bs-toggle="modal">
+                            <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card body Table-->
+
+            <div class="table-responsive container-fluid">
+                <table class="table align-items-center">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="sort font-weight-bold text-info text-center" >#</th>
+                            <th scope="col" class="sort font-weight-bold text-info">Ad</th>
+                            <th scope="col" class="sort font-weight-bold text-info" >Plaka</th>
+                            <th scope="col" class="sort font-weight-bold text-info" >Telefon</th>
+                            <th scope="col" class="sort font-weight-bold text-info" ></th>
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        <tr *ngFor="let item of [].constructor(5); let i=index">
+                            <th class="text-center">
+                               {{i}}
+                            </th>
+                            <td>
+                               Asdd
+                            </td>
+                            <td>
+                               sads
+                            </td>
+                            <td>
+                            sdsd
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-end">
+                                    <span href="#modal-add" (click)="openAddUser('1',true)" data-bs-toggle="modal" class="mr-2 text-info"><i class="fas fa-pencil-alt"></i></span>
+                                    <span (click)=" alertConfirmation('')" class="mr-2 text-danger" class="mr-2 text-danger"><i class="fas fa-trash"></i></span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  <app-add-user [id]="id"></app-add-user>
