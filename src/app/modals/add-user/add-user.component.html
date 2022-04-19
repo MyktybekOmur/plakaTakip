@@ -6,15 +6,15 @@
                     <!-- Sales Unid ID -->
                     <div class="form-group mb-2">
                         <label class="form-control-label">Ad</label>
-                        <input type="text" class="form-control" placeholder="{{id}}">
+                        <input [(ngModel)]="ad" type="text" class="form-control" placeholder="">
                     </div>
                     <div class="form-group mb-2">
                         <label class="form-control-label">Plaka</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input [(ngModel)]="plaka" type="text" class="form-control" placeholder="">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Telefon</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input [(ngModel)]="tel" type="text" class="form-control" placeholder="">
                     </div>
    
                     <!--Shelf ID-->
@@ -22,7 +22,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button"  class="btn btn-sm btn-primary rounded-pill mr-auto" data-bs-dismiss="modal">Ekle</button>
+                    <button type="button" (click)="ekle()" class="btn btn-sm btn-primary rounded-pill mr-auto">Ekle</button>
                     <button type="button" data-bs-dismiss="modal" class="btn btn-sm btn-link text-muted px-2">İptal</button>
 
                 </div>

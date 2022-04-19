@@ -9,7 +9,7 @@
                         <h6 class="d-inline-block mb-0">Sisteme Kayıtlı Araçlar</h6>
                     </div>
                     <div class="col text-end">
-                        <a href="#modal-add" (click)="openAddUser('0',true)" data-bs-target="#modal-add" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-bs-toggle="modal">
+                        <a href="#modal-add" data-bs-target="#modal-add" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-bs-toggle="modal">
                             <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                         </a>
                     </div>
@@ -29,23 +29,23 @@
                         </tr>
                     </thead>
                     <tbody class="list">
-                        <tr *ngFor="let item of [].constructor(5); let i=index">
+                        <tr *ngFor="let item of plakalar; let i=index">
                             <th class="text-center">
-                               {{i}}
+                               {{i+1}}
                             </th>
                             <td>
-                               Asdd
+                               {{item.Ad}}
                             </td>
                             <td>
-                               sads
+                               {{item.Plaka}}
                             </td>
                             <td>
-                            sdsd
+                            {{item.Telefon}}
                             </td>
                             <td>
                                 <div class="d-flex justify-content-end">
-                                    <span href="#modal-add" (click)="openAddUser('1',true)" data-bs-toggle="modal" class="mr-2 text-info"><i class="fas fa-pencil-alt"></i></span>
-                                    <span (click)=" alertConfirmation('')" class="mr-2 text-danger" class="mr-2 text-danger"><i class="fas fa-trash"></i></span>
+                                    <span href="#modal-update" (click)="openUpdate(item)" data-bs-toggle="modal" class="mr-2 text-info"><i class="fas fa-pencil-alt"></i></span>
+                                    <span (click)=" alertConfirmation(item.id)" class="mr-2 text-danger" class="mr-2 text-danger"><i class="fas fa-trash"></i></span>
                                 </div>
                             </td>
                         </tr>
@@ -58,3 +58,34 @@
     </div>
   </div>
   <app-add-user [id]="id"></app-add-user>
+    <!--Ekle modal-->
+    <div class="modal fade" id="modal-update" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Sales Unid ID -->
+                    <div class="form-group mb-2">
+                        <label class="form-control-label">Ad</label>
+                        <input [(ngModel)]="ad" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-control-label">Plaka</label>
+                        <input [(ngModel)]="plaka" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Telefon</label>
+                        <input [(ngModel)]="tel" type="text" class="form-control" placeholder="">
+                    </div>
+   
+                    <!--Shelf ID-->
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="guncelle()" class="btn btn-sm btn-primary rounded-pill mr-auto">Ekle</button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-sm btn-link text-muted px-2">İptal</button>
+
+                </div>
+            </div>
+        </div>
+    </div>

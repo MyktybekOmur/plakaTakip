@@ -7,11 +7,7 @@
                     <div class="col">
                         <h6 class="d-inline-block mb-0">Sisteme Kayıtlı Araçlar</h6>
                     </div>
-                    <div class="col text-end">
-                        <a href="#modal-giren-arac" data-bs-target="#modal-giren-arac" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-bs-toggle="modal">
-                            <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
-                        </a>
-                    </div>
+                 
                 </div>
             </div>
             <!-- Card body Table-->
@@ -20,31 +16,37 @@
                 <table class="table align-items-center">
                     <thead>
                         <tr>
-                            <th scope="col" class="sort font-weight-bold text-info text-center" >#</th>
+                            <th scope="col" class="sort font-weight-bold text-info text-center">#</th>
                             <th scope="col" class="sort font-weight-bold text-info">Ad</th>
-                            <th scope="col" class="sort font-weight-bold text-info" >Plaka</th>
-                            <th scope="col" class="sort font-weight-bold text-info" >Telefon</th>
-                            <th scope="col" class="sort font-weight-bold text-info" >Giriş Zamanı </th>
-                     
+                            <th scope="col" class="sort font-weight-bold text-info">Plaka</th>
+                            <th scope="col" class="sort font-weight-bold text-info">Telefon</th>
+                            <th scope="col" class="sort font-weight-bold text-info">Giriş Zamanı </th>
+
                         </tr>
                     </thead>
                     <tbody class="list">
-                        <tr *ngFor="let item of [].constructor(5); let i=index">
+                        <tr *ngFor="let item of araclar; let i=index">
                             <th class="text-center">
-                               {{i}}
+                                {{i}}
                             </th>
                             <td>
-                               Asdd
+                                {{item.Ad}}
                             </td>
                             <td>
-                               sads
+                                {{item.Plaka}}
                             </td>
                             <td>
-                            sdsd
+                                {{item.Telefon}}
                             </td>
                             <td>
-                                sdsd
-                                </td>
+                                {{item.giris_zamani}}
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-end">
+                                  
+                                    <span (click)=" alertConfirmation(item.id)" class="mr-2 text-danger" class="mr-2 text-danger"><i class="fas fa-trash"></i></span>
+                                </div>
+                            </td>
                         </tr>
 
                     </tbody>
@@ -53,5 +55,4 @@
 
         </div>
     </div>
-  </div>
-  <app-giren-arac-ekle></app-giren-arac-ekle>
+</div>
